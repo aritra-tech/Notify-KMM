@@ -21,15 +21,11 @@ kotlin {
 
     sourceSets {
 
-        val sqlDelightVersion = "1.5.3"
-        val dateTimeVersion = "0.4.0"
-        val serializationVersion = "1.4.1"
-
         val commonMain by getting {
             dependencies {
-                implementation("com.squareup.sqldelight:runtime:$sqlDelightVersion")
-                implementation("org.jetbrains.kotlinx:kotlinx-datetime:$dateTimeVersion")
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion")
+                implementation(libs.runtime)
+                implementation(libs.kotlinx.datetime)
+                implementation(libs.kotlinx.serialization.json)
             }
         }
         val commonTest by getting {
@@ -39,7 +35,7 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation("com.squareup.sqldelight:android-driver:$sqlDelightVersion")
+                implementation(libs.android.driver)
             }
         }
         val androidTest by getting
@@ -48,7 +44,7 @@ kotlin {
         val iosSimulatorArm64Main by getting
         val iosMain by creating {
             dependencies {
-                implementation("com.squareup.sqldelight:native-driver:$sqlDelightVersion")
+                implementation(libs.native.driver)
             }
             dependsOn(commonMain)
             iosX64Main.dependsOn(this)
@@ -70,14 +66,15 @@ kotlin {
 sqldelight {
     database("NotifyDatabase") {
         packageName = "com.aritra.notifykmm.database"
+        sourceFolders = listOf("sqldelight")
     }
 }
 
 android {
     namespace = "com.aritra.notifykmm"
-    compileSdk = 33
+    compileSdk = 34
     defaultConfig {
         minSdk = 21
-        targetSdk = 33
+        targetSdk = 34
     }
 }

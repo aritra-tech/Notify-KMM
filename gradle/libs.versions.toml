@@ -1,12 +1,16 @@
 [versions]
 agp = "8.1.2"
+dateTimeVersion = "0.4.0"
 kotlin = "1.9.10"
 compose = "1.5.1"
 compose-compiler = "1.5.3"
 compose-material3 = "1.1.2"
 androidx-activityCompose = "1.7.2"
+serializationVersion = "1.4.1"
+sqlDelightVersion = "1.5.3"
 
 [libraries]
+android-driver = { module = "com.squareup.sqldelight:android-driver", version.ref = "sqlDelightVersion" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
@@ -14,6 +18,10 @@ compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = 
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
 compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
 compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "compose-material3" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "dateTimeVersion" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serializationVersion" }
+native-driver = { module = "com.squareup.sqldelight:native-driver", version.ref = "sqlDelightVersion" }
+runtime = { module = "com.squareup.sqldelight:runtime", version.ref = "sqlDelightVersion" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
