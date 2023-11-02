@@ -1,5 +1,8 @@
 package com.aritra.notifykmm.android.noteList
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,12 +17,14 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 
@@ -65,6 +70,14 @@ fun NoteListScreen(
                         .fillMaxWidth()
                         .height(100.dp)
                 )
+                this@Column.AnimatedVisibility(
+                    visible = !state.isSearchActive,
+                    enter = fadeIn(),
+                    exit = fadeOut()
+                ) {
+                    Text(text = "Notify",
+                        fontWeight = FontWeight.Bold)
+                }
             }
             LazyColumn(
                 modifier = Modifier.weight(1f)
@@ -73,7 +86,9 @@ fun NoteListScreen(
                     NoteItem(
                         note = note,
                         onNoteClick = { /*TODO*/ },
-                        modifier = Modifier.fillMaxWidth().padding(16.dp)
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp)
                     )
                 }
             }

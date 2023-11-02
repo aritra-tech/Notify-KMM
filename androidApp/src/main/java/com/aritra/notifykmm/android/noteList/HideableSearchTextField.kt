@@ -50,9 +50,10 @@ fun HideableSearchTextField(
         AnimatedVisibility(
             visible = isSearchActive,
             enter = fadeIn(),
-            exit = fadeOut()
+            exit = fadeOut(),
+            modifier = Modifier.align(Alignment.CenterEnd)
         ) {
-            IconButton(onClick = { onCloseClick }) {
+            IconButton(onClick = onCloseClick ) {
                 Icon(imageVector = Icons.Default.Close,
                     contentDescription = "Close"
                 )
@@ -63,7 +64,7 @@ fun HideableSearchTextField(
             exit = fadeOut(),
             modifier = Modifier.align(Alignment.CenterEnd)
         ) {
-            IconButton(onClick = { onSearchClick }) {
+            IconButton(onClick = onSearchClick ) {
                 Icon(imageVector = Icons.Default.Search, contentDescription = "Search")
             }
         }
