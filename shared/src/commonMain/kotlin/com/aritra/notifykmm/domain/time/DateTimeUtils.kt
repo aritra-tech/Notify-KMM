@@ -8,7 +8,7 @@ import kotlinx.datetime.toLocalDateTime
 
 object DateTimeUtils {
 
-    fun main(): LocalDateTime {
+    fun now(): LocalDateTime {
         return Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
     }
 
