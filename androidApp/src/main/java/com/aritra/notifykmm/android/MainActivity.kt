@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import com.amsavarthan.note.android.theme.NotifyKMMTheme
-import com.aritra.notifykmm.android.noteList.NoteListScreen
+import com.aritra.notifykmm.android.navigation.NotifyKMMApp
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -13,7 +13,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             NotifyKMMTheme {
-                NoteListScreen()
+                NotifyKMMApp()
             }
         }
     }
