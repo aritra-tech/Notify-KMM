@@ -7,7 +7,7 @@ Notify-KMM is a simple note taking application build to demonstrate the use of K
 |-----------|---|
 
 
-### 👨‍💻 Tech stack
+## 👨‍💻 Tech stack
 
 | Tools                 |                                     Link                                                                  |
 |:----------------------|:---------------------------------------------------------------------------------------------------------:|
@@ -15,7 +15,7 @@ Notify-KMM is a simple note taking application build to demonstrate the use of K
 | 🩶  Framework         |  [Compose Multiplatform](https://www.jetbrains.com/lp/compose-multiplatform)                              |
 | ✏️   Database                |          [SQLDelight](https://github.com/cashapp/sqldelight)                                       |
 
-### How to run the project? ✅
+## How to run the project? ✅
 
 To run this project, you need the following:
 
@@ -25,7 +25,7 @@ To run this project, you need the following:
 
 The [Kotlin Multiplatform Mobile plugin](https://plugins.jetbrains.com/plugin/14936-kotlin-multiplatform-mobile)
 
-### Check your environment
+## Check your environment
 
 Before you start, use the [KDoctor](https://github.com/Kotlin/kdoctor) tool to ensure that your
 development environment is configured correctly:
@@ -66,3 +66,20 @@ This is a Kotlin module that builds into an Android application. It uses Gradle 
 ### [`iosApp`](/iosApp)
 This is an Xcode project that builds into an iOS application. It depends on and uses the shared module as a CocoaPods dependency.
 
+## License
+
+```
+   Copyright 2023 Aritra Das
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+```
