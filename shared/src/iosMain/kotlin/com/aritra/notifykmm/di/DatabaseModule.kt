@@ -8,7 +8,7 @@ import com.aritra.notifykmm.domain.note.NoteDataSource
 class DatabaseModule {
 
     private val factory by lazy { DatabaseDriverFactory() }
-    private val noteDataSource: NoteDataSource by lazy {
+    val noteDataSource: NoteDataSource by lazy {
         SqlDelightNoteDataSource(NotifyDatabase(factory.createDriver()))
     }
 }
